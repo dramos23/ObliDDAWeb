@@ -23,7 +23,7 @@
             <input type ="text" name="password"><br>  
             <input type="submit" value="Login"></input>
             <%if(msg!=null){%> 
-                 <h1> Error: <%=msg%>
+            <h1> Error: <%=msg%> </h1>
             <%}%>                 
        </form>
     </body>

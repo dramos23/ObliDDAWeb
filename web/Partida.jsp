@@ -4,6 +4,11 @@
     Author     : FAT
 --%>
 
+<%
+    String msg = request.getParameter("msg");
+    String estado = request.getParameter("estado");
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -58,5 +63,8 @@
         <div><h1>Jugadores: <span id="spanJugadores"></span></h1></div>
         <div><h1>JugadoresMano: <span id="spanJugadoresMano"></span></h1></div>
         <div><h1>Contador: <span id="spanContador"></span></h1></div>
+        <%if(estado.equals("apostar")){%> 
+            <h1> Error: <%=msg%> </h1>
+        <%}%>  
     </body>
 </html>

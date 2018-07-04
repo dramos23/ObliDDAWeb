@@ -67,7 +67,7 @@ public class VistaWebPartida implements VistaPartida {
     
     @Override
     public void mostrarCarta(Carta carta, JButton btn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        enviar("mostrarCarta", carta.getCodImagen());
     }
 
     @Override
@@ -82,17 +82,20 @@ public class VistaWebPartida implements VistaPartida {
 
     @Override
     public void mostrarValores(int luz, int pozo, int dineroJugador) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        enviar("mostrarLuz", Integer.toString(luz));
+        enviar("mostrarPozo", Integer.toString(pozo));
+        enviar("mostrarSaldo", Integer.toString(dineroJugador));
     }
 
     @Override
     public void mostrarEstado(String estado) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mostrarApuesta(Apuesta a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //Mostrar panel de aceptar apuesta, esconder panel de apostar
+        String apuesta = a.getApostador().getNombre() + " apostó $" + 
+                a.getMontoApostado() + ". ¿Aceptas?";        
     }
 
     @Override
@@ -102,7 +105,7 @@ public class VistaWebPartida implements VistaPartida {
 
     @Override
     public void mostrarMano(ArrayList<Carta> cartas) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //enviar("mostrarMano", ComponentesHtml.lista(true, "mano", cartas));
     }
 
     @Override
