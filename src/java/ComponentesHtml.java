@@ -26,7 +26,7 @@ public class ComponentesHtml {
     public static String tblImg(String id, ArrayList opciones){
         String tblImg = "<table><tr>";
         for(Object obj:opciones){
-            tblImg+= "<td><img src=\"" + obj + " ></td>";
+            tblImg = tblImg + "<td><img src='/ObliDDA/cartas/" + obj + ".png' ></td>";
         }
                 
         tblImg = "<tr><table>";        
