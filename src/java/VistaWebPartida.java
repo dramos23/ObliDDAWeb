@@ -77,7 +77,7 @@ public class VistaWebPartida implements VistaPartida {
 
     @Override
     public void mostrarJugadoresMano(ArrayList<JugadorParticipante> jugadores) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        enviar("listaJugadoresMano", ComponentesHtml.lista(true, "lstJugadoresMano", jugadores));
     }
 
     @Override
@@ -107,7 +107,7 @@ public class VistaWebPartida implements VistaPartida {
 
     @Override
     public void mostrarNombreJugador(String nombreCompleto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        enviar("nombreJugador",nombreCompleto);
     }
 
     @Override
@@ -176,8 +176,8 @@ public class VistaWebPartida implements VistaPartida {
     }
 
     @Override
-    public void iniciaContador(String toString) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void iniciaContador(String str) {
+        enviar("contador", str);
     }
 
     @Override
@@ -186,8 +186,8 @@ public class VistaWebPartida implements VistaPartida {
     }
 
     @Override
-    public void actualizarContador(String contador) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actualizarContador(String str) {
+        enviar("contador", str);
     }
     
 }

@@ -22,5 +22,15 @@ public class ComponentesHtml {
         lista+="</select>";
         return lista;
     }
+     
+    public static String tblImg(String id, ArrayList opciones){
+        String tblImg = "<table><tr>";
+        for(Object obj:opciones){
+            tblImg+= "<td><img src=\"" + obj + " ></td>";
+        }
+                
+        tblImg = "<tr><table>";        
+        return tblImg;
+    }
     
 }

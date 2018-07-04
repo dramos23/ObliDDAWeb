@@ -20,17 +20,17 @@
                 document.location="/partida/";
             }
             
-            vistaWeb.addEventListener("cantidad", function (evento){
-                document.getElementById("cantidad").innerHTML = evento.data;                
-            },false);
-            vistaWeb.addEventListener("nombreDueño", function (evento){
-                document.getElementById("nombreDuenio").innerHTML = evento.data;
-            },false);
-            vistaWeb.addEventListener("tiposTelefono", function (evento){
-                document.getElementById("spanTipo").innerHTML = evento.data;
+            vistaWeb.addEventListener("nombreJugador", function (evento){
+                document.title = evento.data;                
             },false);
             vistaWeb.addEventListener("listaJugadores", function (evento){
-                document.getElementById("spanContactos").innerHTML = evento.data;
+                document.getElementById("spanJugadores").innerHTML = evento.data;
+            },false);
+            vistaWeb.addEventListener("listaJugadoresMano", function (evento){
+                document.getElementById("spanJugadoresMano").innerHTML = evento.data;
+            },false);
+            vistaWeb.addEventListener("contador", function (evento){
+                document.getElementById("spanContador").innerHTML = evento.data;
             },false);
             vistaWeb.addEventListener("mensaje", function (evento){
                 alert(evento.data);
@@ -55,6 +55,8 @@
         <title>Partida</title>
     </head>
     <body>        
-        <div><h1>Contactos: <span id="spanContactos"></span></h1></div>
+        <div><h1>Jugadores: <span id="spanJugadores"></span></h1></div>
+        <div><h1>JugadoresMano: <span id="spanJugadoresMano"></span></h1></div>
+        <div><h1>Contador: <span id="spanContador"></span></h1></div>
     </body>
 </html>
