@@ -93,9 +93,11 @@ public class VistaWebPartida implements VistaPartida {
 
     @Override
     public void mostrarApuesta(Apuesta a) {
-        //Mostrar panel de aceptar apuesta, esconder panel de apostar
-        String apuesta = a.getApostador().getNombre() + " apostó $" + 
-                a.getMontoApostado() + ". ¿Aceptas?";        
+        String htmlApuesta = a.getApostador().getNombre() + " apostó $" + 
+                a.getMontoApostado() + ". ¿Aceptas?" + "<br> "
+                + "<input type='button' value='Aceptar apuesta' onclick='aceptaApuesta()'>" + 
+                "<br><input type='button' value='Aceptar apuesta' onclick='pasaApuesta()'>";
+        enviar("recibirApuesta", htmlApuesta);
     }
 
     @Override

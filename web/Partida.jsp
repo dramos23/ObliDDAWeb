@@ -6,7 +6,6 @@
 
 <%
     String msg = request.getParameter("msg");
-    String estado = request.getParameter("estado");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,6 +16,10 @@
          <script src="http://code.jquery.com/jquery-latest.min.js"></script>
          <script type="text/javascript">
 
+            function pasaApuesta(){
+                var 
+            }
+
             var vistaWeb = new EventSource("partidaServlet?accion=new");
                                     
             vistaWeb.onerror = function(evento) {
@@ -25,6 +28,11 @@
                 document.location="/partida/";
             }
             
+            vistaWeb.addEventListener("recibirApuesta", function (evento){
+                document.getElementById("spanAceptarApuesta").innerHTML = evento.data;
+            },false);
+            
+    
             vistaWeb.addEventListener("nombreJugador", function (evento){
                 document.title = evento.data;                
             },false);
@@ -45,8 +53,7 @@
                 var nom = $("#nombre").val();
                 var nro = $("#numero").val();
                 var pos = $("#cboTipos").prop("selectedIndex");
-                $.get("agendaServlet?accion=crearContacto&nombre=" + nom + "&numero=" + nro+ "&tipo=" + pos, function (data) {
-                    
+                $.get("agendaServlet?accion=crearContacto&nombre=" + nom + "&numero=" + nro+ "&tipo=" + pos, function (data) {                    
                 });
             }
             function salir(){
@@ -63,8 +70,7 @@
         <div><h1>Jugadores: <span id="spanJugadores"></span></h1></div>
         <div><h1>JugadoresMano: <span id="spanJugadoresMano"></span></h1></div>
         <div><h1>Contador: <span id="spanContador"></span></h1></div>
-        <%if(estado.equals("apostar")){%> 
-            <h1> Error: <%=msg%> </h1>
-        <%}%>  
+        <div><span id="spanAceptarApuesta></span></div>
+
     </body>
 </html>
